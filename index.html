@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор палива</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Веб калькулятор характеристик палива</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('task1')">Завдання 1</button>
+            <button class="tab-button" onclick="openTab('task2')">Завдання 2</button>
+        </div>
+        
+        <div id="task1" class="tab-content" style="display: block;">
+            <h2>Розрахунок складу палива та теплоти згоряння</h2>
+            <div class="input-group">
+                <label for="H">H<sup>P</sup>, %:</label>
+                <input type="number" id="H" step="0.1" value="1.9">
+                
+                <label for="C">C<sup>P</sup>, %:</label>
+                <input type="number" id="C" step="0.1" value="21.1">
+                
+                <label for="S">S<sup>P</sup>, %:</label>
+                <input type="number" id="S" step="0.1" value="2.6">
+                
+                <label for="N">N<sup>P</sup>, %:</label>
+                <input type="number" id="N" step="0.1" value="0.2">
+                
+                <label for="O">O<sup>P</sup>, %:</label>
+                <input type="number" id="O" step="0.1" value="7.1">
+                
+                <label for="W">W<sup>P</sup>, %:</label>
+                <input type="number" id="W" step="0.1" value="53.0">
+                
+                <label for="A">A<sup>P</sup>, %:</label>
+                <input type="number" id="A" step="0.1" value="14.1">
+            </div>
+            <button onclick="calculateTask1()">Розрахувати</button>
+            
+            <div id="results1" class="results"></div>
+        </div>
+        
+        <div id="task2" class="tab-content">
+            <h2>Перерахунок складу мазуту на робочу масу</h2>
+            <div class="input-group">
+                <label for="C_g">Вуглець, %:</label>
+                <input type="number" id="C_g" step="0.1" value="85.5">
+                
+                <label for="H_g">Водень, %:</label>
+                <input type="number" id="H_g" step="0.1" value="11.2">
+                
+                <label for="O_g">Кисень, %:</label>
+                <input type="number" id="O_g" step="0.1" value="0.8">
+                
+                <label for="S_g">Сірка, %:</label>
+                <input type="number" id="S_g" step="0.1" value="2.5">
+                
+                <label for="Q_g">Теплота згоряння, МДж/кг:</label>
+                <input type="number" id="Q_g" step="0.1" value="40.4">
+                
+                <label for="W_r">Вологість, %:</label>
+                <input type="number" id="W_r" step="0.1" value="2.0">
+                
+                <label for="A_d">Зольність сухої маси, %:</label>
+                <input type="number" id="A_d" step="0.01" value="0.15">
+                
+                <label for="V">Вміст ванадію, мг/кг:</label>
+                <input type="number" id="V" step="1" value="333.3">
+            </div>
+            <button onclick="calculateTask2()">Перерахувати</button>
+            
+            <div id="results2" class="results"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
